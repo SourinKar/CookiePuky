@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Warm, appetizing color palette */
+    --background: 30 40% 98%;
+    --foreground: 20 25% 15%;
+
+    --card: 30 30% 99%;
+    --card-foreground: 20 25% 15%;
+
+    --popover: 30 30% 99%;
+    --popover-foreground: 20 25% 15%;
+
+    /* Warm coral/orange - appetizing */
+    --primary: 16 85% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Fresh green - ingredients */
+    --secondary: 142 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Warm cream */
+    --muted: 30 30% 94%;
+    --muted-foreground: 20 15% 45%;
+
+    /* Golden accent */
+    --accent: 38 92% 55%;
+    --accent-foreground: 20 25% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 25% 88%;
+    --input: 30 25% 88%;
+    --ring: 16 85% 58%;
+
+    --radius: 1rem;
+
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(16 85% 58%) 0%, hsl(38 92% 55%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(38 92% 55%) 0%, hsl(16 85% 58%) 100%);
+    --gradient-fresh: linear-gradient(135deg, hsl(142 45% 45%) 0%, hsl(160 50% 50%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(16 85% 58% / 0.15);
+    --shadow-card: 0 8px 32px -8px hsl(20 25% 15% / 0.1);
+    --shadow-glow: 0 0 40px -10px hsl(16 85% 58% / 0.4);
+
+    /* Fonts */
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 20% 8%;
+    --foreground: 30 30% 95%;
+
+    --card: 20 20% 12%;
+    --card-foreground: 30 30% 95%;
+
+    --popover: 20 20% 12%;
+    --popover-foreground: 30 30% 95%;
+
+    --primary: 16 85% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 20 20% 18%;
+    --muted-foreground: 30 20% 60%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 20 25% 15%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 20% 20%;
+    --input: 20 20% 20%;
+    --ring: 16 85% 58%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-premium {
+    background-image: var(--gradient-premium);
+  }
+
+  .bg-gradient-fresh {
+    background-image: var(--gradient-fresh);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+}
