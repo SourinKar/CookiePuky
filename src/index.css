@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
 
 @layer base {
   :root {
@@ -166,5 +167,48 @@
   @keyframes pulse-soft {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.8; }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-in-out forwards;
+    animation-delay: var(--animation-delay, 0s);
+  }
+
+  @keyframes fade-in {
+    0% { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-0 { --animation-delay: 0s; }
+  .delay-1 { --animation-delay: 0.1s; }
+  .delay-2 { --animation-delay: 0.2s; }
+  .delay-3 { --animation-delay: 0.3s; }
+  .delay-4 { --animation-delay: 0.4s; }
+
+  /* Orange gradient background for pages */
+  .bg-page-gradient {
+    background: radial-gradient(circle at center, 
+      rgba(251, 146, 60, 0.4) 0%, 
+      rgba(251, 146, 60, 0.25) 30%, 
+      rgba(245, 158, 11, 0.18) 60%, 
+      rgba(251, 146, 60, 0.08) 100%);
+    background-attachment: fixed;
+  }
+
+  /* Animated orange glow background */
+  .bg-page-glow {
+    background: radial-gradient(circle at center, 
+      rgba(251, 146, 60, 0.45) 0%, 
+      rgba(251, 146, 60, 0.3) 25%, 
+      rgba(245, 158, 11, 0.22) 50%, 
+      rgba(251, 146, 60, 0.12) 75%, 
+      rgba(251, 146, 60, 0.05) 100%);
+    background-attachment: fixed;
   }
 }

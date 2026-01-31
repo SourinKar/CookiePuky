@@ -36,22 +36,22 @@ const Index = () => {
 
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium animate-fade-in delay-0">
               <Sparkles className="w-4 h-4" />
               AI-Powered Recipe Generator
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight animate-fade-in delay-1">
               Turn Your{" "}
               <span className="text-gradient">Ingredients</span>{" "}
               Into Delicious Recipes
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in delay-2">
               Stop wondering what to cook! Enter the ingredients you have, and let our AI suggest perfect Indian recipes with instant grocery links for anything you're missing.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-3">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/recipes">
                   Start Cooking <ArrowRight className="w-5 h-5" />
@@ -63,7 +63,7 @@ const Index = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-8 pt-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <div className="flex flex-wrap justify-center gap-8 pt-8 animate-fade-in delay-4">
               {[
                 { value: "1000+", label: "Recipes" },
                 { value: "50+", label: "Cuisines" },
@@ -95,8 +95,12 @@ const Index = () => {
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className="bg-card p-6 rounded-2xl shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`bg-card p-6 rounded-2xl shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in ${
+                  index === 0 ? "delay-0" : 
+                  index === 1 ? "delay-1" : 
+                  index === 2 ? "delay-2" : 
+                  index === 3 ? "delay-3" : "delay-4"
+                }`}
               >
                 <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center mb-4">
                   <feature.icon className="w-6 h-6 text-primary-foreground" />

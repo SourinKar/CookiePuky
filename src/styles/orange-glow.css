@@ -1,0 +1,83 @@
+/* Orange Glow Effects for Cooking Guide */
+
+.orange-glow-title {
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(251, 146, 60, 0.4) 0%,
+    transparent 50%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(251, 146, 60, 0.6));
+}
+
+.orange-glow-step-box {
+  background: linear-gradient(
+    to bottom right,
+    rgba(251, 146, 60, 0.1),
+    rgba(217, 119, 6, 0.05),
+    rgba(251, 146, 60, 0.05)
+  );
+  border: 2px solid rgba(253, 188, 75, 0.3);
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.3),
+    inset 0 0 20px rgba(251, 146, 60, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.orange-glow-step-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 0% 0%,
+    rgba(251, 146, 60, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.orange-glow-step-number {
+  background: linear-gradient(135deg, rgb(251, 146, 60) 0%, rgb(245, 158, 11) 100%);
+  color: white;
+  box-shadow: 0 0 12px rgba(251, 146, 60, 0.6),
+    0 4px 12px rgba(251, 146, 60, 0.3);
+}
+
+.orange-glow-step-title {
+  filter: drop-shadow(0 0 8px rgba(251, 146, 60, 0.5));
+}
+
+.orange-glow-button-incomplete {
+  border-color: rgba(251, 146, 60, 0.5);
+  color: rgb(251, 146, 60);
+  box-shadow: 0 0 8px rgba(251, 146, 60, 0.2);
+}
+
+.orange-glow-button-complete {
+  background: linear-gradient(
+    135deg,
+    rgb(251, 146, 60) 0%,
+    rgb(245, 158, 11) 100%
+  );
+  box-shadow: 0 0 12px rgba(251, 146, 60, 0.4);
+}
+
+.orange-glow-timeline-active {
+  border-color: rgba(251, 146, 60, 0.5);
+  background-color: rgba(251, 146, 60, 0.05);
+  box-shadow: 0 0 12px rgba(251, 146, 60, 0.2),
+    inset 0 0 12px rgba(251, 146, 60, 0.1);
+}
+
+.orange-glow-timeline-inactive:hover {
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.orange-glow-timeline-number {
+  background: linear-gradient(135deg, rgb(251, 146, 60) 0%, rgb(245, 158, 11) 100%);
+  color: white;
+  box-shadow: 0 0 8px rgba(251, 146, 60, 0.5);
+}

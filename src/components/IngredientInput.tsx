@@ -66,6 +66,8 @@ export function IngredientInput({ ingredients, setIngredients }: IngredientInput
               <button
                 onClick={() => removeIngredient(ingredient)}
                 className="hover:bg-primary/20 rounded-full p-0.5 transition-colors"
+                title={`Remove ${ingredient}`}
+                aria-label={`Remove ${ingredient}`}
               >
                 <X className="w-3 h-3" />
               </button>

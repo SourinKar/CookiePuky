@@ -22,15 +22,17 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/ingredients" element={<Ingredients />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/faqs" element={<FAQs />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="bg-page-glow min-h-screen">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </TooltipProvider>
