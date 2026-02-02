@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: cookie-puky.vercel.app
+**URL**: https://cookie-puky.vercel.app
 
 ## How can I edit this code?
 
